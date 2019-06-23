@@ -13,6 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <!--CDN BOOTSTRAP-->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -34,7 +35,8 @@
                 <table class="table">
                     <tr>
                         <th></th>
-                        <th class="col-md-3">Id</th>
+                        <!--col-md-3 mengatur grid pada layar monitor komputer ukuran sedang. Bootstrap membagi halaman web menjadi 12-->
+                        <th class="col-md-3">Id</th> 
                         <th class="col-md-3">Name</th>
 
                         <th  class="col-md-3" align="center">
@@ -63,10 +65,10 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <label for="usr"> Region Id: <%=r.getId()%></label>
+                                        <label> Region Id: <%=r.getId()%></label>
                                     </div>
                                     <div class="form-group">
-                                        <label for="usr">Name : <%=r.getName()%></label>
+                                        <label for="reg">Name : <%=r.getName()%></label>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -80,7 +82,7 @@
                     <!-- Modal Update -->            
                     <div class="modal fade" id="UpdateModal<%=r.getId()%>" role="dialog">
                         <div class="modal-dialog">
-                            <form id="pr" method="POST" action="region">
+                            <form method="POST" action="region">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -88,12 +90,12 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="form-group">
-                                            <label for="usr">Id:</label>
-                                            <input type="text" class="form-control" value="<%=r.getId()%>" name="regionId" id="usr" readonly="readonly">
+                                            <label>Id:</label>
+                                            <input type="text" class="form-control" value="<%=r.getId()%>" name="regionId" readonly="readonly">
                                         </div>
                                         <div class="form-group">
-                                            <label for="usr">Name:</label>
-                                            <input type="text" class="form-control" value="<%=r.getName()%>" name="regionName" id="usr">
+                                            <label>Name:</label>
+                                            <input type="text" class="form-control" value="<%=r.getName()%>" name="regionName">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -117,12 +119,12 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="form-group">
-                                            <label for="usr">Id</label>
-                                            <input type="text" name="regionId" value="<%=(region != null) ? region.getId() : ""%>" />
+                                            <label>Id</label>
+                                            <input type="text" name="regionId" value="<%=(region != null) ? region.getId() : ""%>">
                                         </div>
                                         <div class="form-group">
-                                            <label for="usr">Name:</label>
-                                            <input type="text" name="regionName" value="<%=(region != null) ? region.getName() : ""%>" />
+                                            <label>Name:</label>
+                                            <input type="text" name="regionName" value="<%=(region != null) ? region.getName() : ""%>">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
